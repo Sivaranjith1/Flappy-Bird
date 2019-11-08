@@ -1,1 +1,2 @@
-# Flappy-Bird
+# Flappy Bird
+This is a flappy bird game
