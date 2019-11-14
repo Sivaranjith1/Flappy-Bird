@@ -11,6 +11,9 @@ class Bird:
         self.speed = 0
         self.maxSpeed = 7
         self.gravity = 0.7
+        
+        self.score = 0
+        self.lastPipe = None
 
     def move(self):
         if not self.alive:
@@ -38,6 +41,7 @@ class Bird:
             self.alive = False
 
     def checkPipeCollision(self, pipes):
+        lastPipe = None
         for pipe in pipes:
             yCollision = False
             #top collision
@@ -48,6 +52,15 @@ class Bird:
 
             if yCollision and self.x - self.radius <= pipe.x + pipe.width and self.x + self.radius >= pipe.x:
                 self.alive = False
+                return False
+
+            #scoring
+            if pipe.x < self.x:
+                lastPipe = pipe
+
+        if lastPipe != self.lastPipe and self.alive:
+            self.score += 1
+            self.lastPipe = lastPipe
 
     def draw(self, win):
         pygame.draw.circle(win, (255, 170, 0), (self.x, self.y), self.radius)
