@@ -1,0 +1,10 @@
+Markdown==3.1.1
+numpy==1.16.4
+numpydoc==0.9.1
+py==1.8.0
+pycodestyle==2.5.0
+pygame==1.9.6
+Pygments==2.4.2
+pylint==2.4.3
+pywin32==223
+scipy==1.2.1
