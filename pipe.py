@@ -4,7 +4,7 @@ class Pipe:
     def __init__(self):
         self.x = 500
 
-        self.gapDistanse = 80
+        self.gapDistanse = 100
         self.gapTop = random.randint(50, 500 - self.gapDistanse - 10)
         self.y = self.gapTop + self.gapDistanse
 
